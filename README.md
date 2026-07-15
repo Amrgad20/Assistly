@@ -37,7 +37,6 @@ Assistly is a full-stack customer support platform that brings AI-assisted conve
 ### AI
 
 - Groq
-- Gemini
 - FAISS
 
 ## Installation

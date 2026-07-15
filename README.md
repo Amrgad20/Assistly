@@ -127,19 +127,3 @@ Assistly/
 |-- README.md
 `-- README_DEMO.md
 ```
-
-## Screenshots
-
-Screenshots will be added here to highlight the admin, agent, and customer experiences.
-
-## Future Improvements
-
-- Add continuous integration for builds and automated tests.
-- Provide containerized local and production deployment options.
-- Expand automated coverage and operational observability.
-- Add deployment and architecture documentation.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-

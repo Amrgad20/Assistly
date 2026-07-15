@@ -1,0 +1,23 @@
+<div class="toolbar">
+
+    <div class="left">
+
+        <input
+            type="text"
+            placeholder="Search agents..."
+            [ngModel]="search"
+            (ngModelChange)="onSearch($event)">
+
+    </div>
+
+    <div class="right">
+
+        <app-button
+            text="Add Agent"
+            variant="primary"
+            (clicked)="addAgent()">
+        </app-button>
+
+    </div>
+
+</div>

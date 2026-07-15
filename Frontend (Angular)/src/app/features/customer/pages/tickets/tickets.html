@@ -1,0 +1,203 @@
+<div class="page">
+
+  <div class="page-header">
+
+    <div>
+
+      <h1>My Tickets</h1>
+
+      <p>
+        Track your support requests and their current status.
+      </p>
+
+    </div>
+
+  </div>
+
+  <app-data-table
+    [columns]="columns"
+    [rows]="rows"
+    [actions]="actions"
+    (actionClick)="handleAction($event)">
+  </app-data-table>
+
+</div>
+
+@if(selectedTicket){
+
+  <div
+    class="modal-backdrop"
+    (click)="closeTicketDetails()">
+
+    <div
+      class="ticket-modal"
+      (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="ticket-id">
+            {{ selectedTicket.id }}
+          </span>
+
+          <h2>
+            {{ selectedTicket.subject }}
+          </h2>
+
+        </div>
+
+        <button
+          type="button"
+          class="close-button"
+          aria-label="Close ticket details"
+          (click)="closeTicketDetails()">
+
+          ✕
+
+        </button>
+
+      </div>
+
+      <div class="ticket-badges">
+
+        <span
+          class="badge"
+          [class.high]="
+            selectedTicket.priority === 'high'
+          "
+          [class.medium]="
+            selectedTicket.priority === 'medium'
+          "
+          [class.low]="
+            selectedTicket.priority === 'low'
+          ">
+
+          {{ selectedTicket.priority | uppercase }}
+
+        </span>
+
+        <span
+          class="badge"
+          [class.open]="
+            selectedTicket.status === 'open'
+          "
+          [class.pending]="
+            selectedTicket.status === 'pending'
+          "
+          [class.resolved]="
+            selectedTicket.status === 'resolved'
+          ">
+
+          {{ selectedTicket.status | uppercase }}
+
+        </span>
+
+      </div>
+
+      <div class="details-grid">
+
+        <div class="detail-item">
+
+          <span>Customer</span>
+
+          <strong>
+            {{ selectedTicket.customer }}
+          </strong>
+
+        </div>
+
+        <div class="detail-item">
+
+          <span>Category</span>
+
+          <strong>
+            {{ selectedTicket.category }}
+          </strong>
+
+        </div>
+
+        <div class="detail-item">
+
+          <span>Assigned Agent</span>
+
+          <strong>
+            {{
+              getAgentName(
+                selectedTicket.assignedAgentId
+              )
+            }}
+          </strong>
+
+        </div>
+
+        <div class="detail-item">
+
+          <span>Created At</span>
+
+          <strong>
+            {{
+              selectedTicket.createdAt
+                | date:'medium'
+            }}
+          </strong>
+
+        </div>
+
+        <div class="detail-item">
+
+          <span>Last Updated</span>
+
+          <strong>
+            {{
+              selectedTicket.updatedAt
+                | date:'medium'
+            }}
+          </strong>
+
+        </div>
+
+        @if(selectedTicket.orderNumber){
+
+          <div class="detail-item">
+
+            <span>Order Number</span>
+
+            <strong>
+              {{ selectedTicket.orderNumber }}
+            </strong>
+
+          </div>
+
+        }
+
+      </div>
+
+      <div class="description-section">
+
+        <h3>Description</h3>
+
+        <p>
+          {{ selectedTicket.description }}
+        </p>
+
+      </div>
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="secondary-button"
+          (click)="closeTicketDetails()">
+
+          Close
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}

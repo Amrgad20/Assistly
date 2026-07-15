@@ -1,0 +1,229 @@
+<a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+
+<header class="navbar">
+  <a
+    class="brand"
+    routerLink="/"
+    aria-label="Assistly home">
+
+    <span class="logo-icon" aria-hidden="true">A</span>
+
+    <span class="logo-text">
+      <strong>Assistly</strong>
+      <small>AI Customer Support Platform</small>
+    </span>
+
+  </a>
+
+  <nav aria-label="Primary navigation">
+    <a href="#features">Features</a>
+    <a href="#docs">Docs</a>
+    <a class="nav-login" routerLink="/login">Login</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="eyebrow">AI-powered customer support</span>
+
+      <h1 id="hero-title">
+        Helpful support,<br>
+        ready when customers need it
+      </h1>
+
+      <p>
+        Bring AI chat, business knowledge, voice, vision, ticketing,
+        and human support together in one focused workspace.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary-btn" routerLink="/login">
+          Login to Assistly
+        </a>
+
+        <a class="button secondary-btn" href="#features">
+          Learn More
+        </a>
+      </div>
+
+      <ul class="hero-points" aria-label="Platform highlights">
+        <li>Knowledge-aware answers</li>
+        <li>Automatic ticket creation</li>
+        <li>Human agent handoff</li>
+      </ul>
+    </div>
+
+    <div
+      class="widget-preview"
+      role="img"
+      aria-label="Preview of an Assistly customer support conversation">
+
+      <div class="widget-header">
+        <span class="widget-brand">
+          <span class="mini-logo" aria-hidden="true">A</span>
+          Assistly AI
+        </span>
+
+        <span class="online">
+          <span aria-hidden="true"></span>
+          Online
+        </span>
+      </div>
+
+      <div class="preview-chat">
+        <div class="message bot">
+          Hello! How can I help you today?
+        </div>
+
+        <div class="message user">
+          My order arrived damaged. Can I request a refund?
+        </div>
+
+        <div class="message bot">
+          I can help with that. I found the support policy and created
+          a ticket for an agent to review.
+        </div>
+      </div>
+
+      <div class="preview-input">
+        <span>Ask Assistly...</span>
+        <span class="send-icon" aria-hidden="true">&rarr;</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section features" aria-labelledby="features-title">
+    <div class="section-heading">
+      <span class="eyebrow">Built for complete support journeys</span>
+      <h2 id="features-title">One workspace from question to resolution</h2>
+      <p>
+        Assistly helps customers get relevant answers while giving support
+        teams the context and control needed for complex cases.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <span class="card-number">01</span>
+        <h3>AI conversations</h3>
+        <p>Responsive chat with conversation memory and clear typing feedback.</p>
+      </article>
+
+      <article class="feature-card">
+        <span class="card-number">02</span>
+        <h3>Knowledge-aware answers</h3>
+        <p>RAG connects uploaded business documents to customer responses.</p>
+      </article>
+
+      <article class="feature-card">
+        <span class="card-number">03</span>
+        <h3>Automatic ticketing</h3>
+        <p>Support issues can create deduplicated tickets for agent follow-up.</p>
+      </article>
+
+      <article class="feature-card">
+        <span class="card-number">04</span>
+        <h3>Voice and vision</h3>
+        <p>Customers can review voice transcripts and attach product images.</p>
+      </article>
+
+      <article class="feature-card">
+        <span class="card-number">05</span>
+        <h3>Human handoff</h3>
+        <p>Assigned agents can continue conversations without triggering AI replies.</p>
+      </article>
+
+      <article class="feature-card">
+        <span class="card-number">06</span>
+        <h3>Secure role visibility</h3>
+        <p>Customers, agents, and admins receive only the support data they can access.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="docs" class="section how-it-works" aria-labelledby="how-title">
+    <div class="section-heading">
+      <span class="eyebrow">How it works</span>
+      <h2 id="how-title">A clear path to better support</h2>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <span>1</span>
+        <div>
+          <h3>Build the knowledge base</h3>
+          <p>Upload approved support content for retrieval during AI conversations.</p>
+        </div>
+      </li>
+
+      <li>
+        <span>2</span>
+        <div>
+          <h3>Support every conversation</h3>
+          <p>Customers chat naturally while Assistly keeps relevant conversation context.</p>
+        </div>
+      </li>
+
+      <li>
+        <span>3</span>
+        <div>
+          <h3>Escalate with context</h3>
+          <p>Tickets and conversation details reach the assigned support agent.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="technology" class="section technology" aria-labelledby="technology-title">
+    <div class="technology-copy">
+      <span class="eyebrow">Technology</span>
+      <h2 id="technology-title">A practical, modern support stack</h2>
+      <p>
+        Fast interfaces, secure APIs, persistent support data, real-time updates,
+        and retrieval-backed AI work together behind one consistent experience.
+      </p>
+    </div>
+
+    <div class="technology-list" aria-label="Assistly technologies">
+      <span>Angular</span>
+      <span>FastAPI</span>
+      <span>SQLite</span>
+      <span>JWT</span>
+      <span>WebSocket</span>
+      <span>Groq</span>
+      <span>Faster-Whisper</span>
+      <span>FAISS</span>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div>
+      <span class="eyebrow">Ready to get started?</span>
+      <h2 id="cta-title">Bring every support channel into focus</h2>
+      <p>Sign in to your Assistly workspace or create a customer account.</p>
+    </div>
+
+    <div class="cta-actions">
+      <a class="button cta-primary" routerLink="/login">Login</a>
+      <a class="button cta-secondary" routerLink="/register">Register</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-brand" routerLink="/" aria-label="Assistly home">
+    <span class="mini-logo" aria-hidden="true">A</span>
+    <strong>Assistly</strong>
+  </a>
+
+  <p>AI customer support with human oversight.</p>
+
+  <nav aria-label="Footer navigation">
+    <a href="#features">Features</a>
+    <a href="#docs">How It Works</a>
+    <a href="#technology">Technology</a>
+  </nav>
+</footer>

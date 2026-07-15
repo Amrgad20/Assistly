@@ -1,0 +1,63 @@
+.panel{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    height:100%;
+
+    overflow:auto;
+
+}
+
+.item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    padding:16px;
+
+    margin-top:14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    border:1px solid #e5e7eb;
+
+    transition:.2s;
+
+}
+
+.item:hover{
+
+    background:#f8fafc;
+
+}
+
+strong{
+
+    font-size:15px;
+
+}
+
+span{
+
+    color:#6b7280;
+
+    font-size:13px;
+
+}
+
+small{
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}

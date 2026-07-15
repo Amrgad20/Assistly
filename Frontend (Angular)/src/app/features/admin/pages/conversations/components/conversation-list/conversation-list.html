@@ -1,0 +1,33 @@
+<div class="panel">
+
+    <h3>Conversations</h3>
+
+    @for (conversation of mockData.getConversations(); track conversation.id) {
+
+        <div
+            class="item"
+            (click)="select(conversation)">
+
+            <strong>
+
+                {{ conversation.customer.name }}
+
+            </strong>
+
+            <span>
+
+                {{ conversation.messages[conversation.messages.length - 1]?.text }}
+
+            </span>
+
+            <small>
+
+                {{ conversation.status }}
+
+            </small>
+
+        </div>
+
+    }
+
+</div>

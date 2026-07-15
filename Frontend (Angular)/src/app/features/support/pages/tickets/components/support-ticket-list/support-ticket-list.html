@@ -1,0 +1,42 @@
+<app-data-table
+    [columns]="columns"
+    [rows]="rows"
+    [actions]="actions"
+    (actionClick)="handleAction($event)">
+</app-data-table>
+
+@if(selectedTicket){
+
+<div class="modal-backdrop">
+
+    <div class="modal">
+
+        <h2>Update Ticket Status</h2>
+
+        <p>{{ selectedTicket.id }} - {{ selectedTicket.subject }}</p>
+
+        <label>Status</label>
+
+        <select [(ngModel)]="selectedStatus">
+
+            <option value="open">Open</option>
+
+            <option value="pending">Pending</option>
+
+            <option value="resolved">Resolved</option>
+
+        </select>
+
+        <div class="actions">
+
+            <button class="secondary" (click)="closeModal()">Cancel</button>
+
+            <button (click)="saveStatus()">Save</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+}

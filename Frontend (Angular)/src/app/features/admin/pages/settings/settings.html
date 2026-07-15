@@ -1,0 +1,118 @@
+<div class="page">
+
+  <div class="page-heading">
+
+    <div>
+
+      <h1>Settings</h1>
+
+      <p>
+        Manage platform preferences and support configuration.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    @if(successMessage){
+
+      <div class="success-message">
+
+        {{ successMessage }}
+
+      </div>
+
+    }
+
+    @if(errorMessage){
+
+      <div class="error-message">
+
+        {{ errorMessage }}
+
+      </div>
+
+    }
+
+    <div class="field">
+
+      <label for="appName">
+        Application Name
+      </label>
+
+      <input
+        id="appName"
+        type="text"
+        [(ngModel)]="appName"
+        placeholder="Enter application name">
+
+    </div>
+
+    <div class="field">
+
+      <label for="supportEmail">
+        Support Email
+      </label>
+
+      <input
+        id="supportEmail"
+        type="email"
+        [(ngModel)]="supportEmail"
+        placeholder="Enter support email">
+
+    </div>
+
+    <div class="toggle">
+
+      <div>
+
+        <strong>
+          Auto assign tickets
+        </strong>
+
+        <span>
+          Automatically assign new tickets to available agents.
+        </span>
+
+      </div>
+
+      <input
+        type="checkbox"
+        [(ngModel)]="autoAssign">
+
+    </div>
+
+    <div class="toggle">
+
+      <div>
+
+        <strong>
+          Enable AI escalation
+        </strong>
+
+        <span>
+          Escalate conversations when the AI detects a high-risk issue.
+        </span>
+
+      </div>
+
+      <input
+        type="checkbox"
+        [(ngModel)]="aiEscalation">
+
+    </div>
+
+    <button
+      type="button"
+      [disabled]="saving"
+      (click)="saveSettings()">
+
+      {{ saving ? 'Saving...' : 'Save Settings' }}
+
+    </button>
+
+  </div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="page">
+
+    <h1>Customer Dashboard</h1>
+
+    <p>Welcome back! Manage your tickets and support conversations.</p>
+
+    <div class="cards">
+
+        @for(stat of stats; track stat.label){
+
+            <div class="card">
+
+                <span>{{ stat.label }}</span>
+
+                <h2>{{ stat.value }}</h2>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>

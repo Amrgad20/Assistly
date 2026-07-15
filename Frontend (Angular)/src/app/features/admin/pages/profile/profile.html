@@ -1,0 +1,202 @@
+<div class="profile-page">
+
+  <div class="page-heading">
+
+    <div>
+
+      <h1>Admin Profile</h1>
+
+      <p>
+        Manage your personal information and account details.
+      </p>
+
+    </div>
+
+    @if(!editing){
+
+      <button
+        type="button"
+        class="primary-button"
+        (click)="startEdit()">
+
+        Edit Profile
+
+      </button>
+
+    }
+
+  </div>
+
+  @if(user){
+
+    <div class="profile-layout">
+
+      <section class="profile-summary">
+
+        <div class="avatar">
+
+          {{ initials }}
+
+        </div>
+
+        <h2>
+
+          {{ user.name }}
+
+        </h2>
+
+        <span class="role">
+
+          {{ roleLabel }}
+
+        </span>
+
+        <div class="summary-item">
+
+          <span>Account ID</span>
+
+          <strong>
+            {{ user.id }}
+          </strong>
+
+        </div>
+
+        <div class="summary-item">
+
+          <span>Account Status</span>
+
+          <strong class="active-status">
+            Active
+          </strong>
+
+        </div>
+
+      </section>
+
+      <section class="profile-card">
+
+        <div class="card-heading">
+
+          <div>
+
+            <h2>Personal Information</h2>
+
+            <p>
+              Update your admin account details.
+            </p>
+
+          </div>
+
+        </div>
+
+        @if(successMessage){
+
+          <div class="success-message">
+
+            {{ successMessage }}
+
+          </div>
+
+        }
+
+        @if(errorMessage){
+
+          <div class="error-message">
+
+            {{ errorMessage }}
+
+          </div>
+
+        }
+
+        <div class="form-grid">
+
+          <div class="form-field">
+
+            <label>Full Name</label>
+
+            <input
+              type="text"
+              [(ngModel)]="name"
+              [disabled]="!editing"
+              placeholder="Enter full name">
+
+          </div>
+
+          <div class="form-field">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              [(ngModel)]="email"
+              [disabled]="!editing"
+              placeholder="Enter email address">
+
+          </div>
+
+          <div class="form-field">
+
+            <label>Role</label>
+
+            <input
+              type="text"
+              [value]="roleLabel"
+              disabled>
+
+          </div>
+
+          <div class="form-field">
+
+            <label>User ID</label>
+
+            <input
+              type="text"
+              [value]="user.id"
+              disabled>
+
+          </div>
+
+        </div>
+
+        @if(editing){
+
+          <div class="actions">
+
+            <button
+              type="button"
+              class="secondary-button"
+              (click)="cancelEdit()">
+
+              Cancel
+
+            </button>
+
+            <button
+              type="button"
+              class="primary-button"
+              (click)="saveProfile()">
+
+              Save Changes
+
+            </button>
+
+          </div>
+
+        }
+
+      </section>
+
+    </div>
+
+  } @else {
+
+    <div class="empty-state">
+
+      No profile information is available.
+
+    </div>
+
+  }
+
+</div>

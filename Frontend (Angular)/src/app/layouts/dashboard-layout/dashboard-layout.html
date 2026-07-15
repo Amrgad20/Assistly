@@ -1,0 +1,22 @@
+<div class="dashboard-layout">
+
+    <app-top-navbar></app-top-navbar>
+
+    <div class="dashboard-body">
+
+        <app-sidebar
+            [appName]="appName"
+            [items]="menuItems">
+        </app-sidebar>
+
+        <main
+            class="dashboard-content"
+            [class.dashboard-content--contained]="usesContainedScrolling">
+            <router-outlet
+                (activate)="updateContentScrollMode()">
+            </router-outlet>
+        </main>
+
+    </div>
+
+</div>

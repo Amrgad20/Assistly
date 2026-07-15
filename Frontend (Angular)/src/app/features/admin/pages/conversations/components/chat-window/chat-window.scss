@@ -1,0 +1,291 @@
+.chat {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+}
+
+.header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ececec;
+  background: white;
+}
+
+.header h3 {
+  margin: 0;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #eef3ff;
+  color: #2f67e9;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  background: #f8f9fb;
+  scroll-behavior: smooth;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.bubble {
+  max-width: 70%;
+  margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  word-break: break-word;
+}
+
+.bubble p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.customer {
+  margin-left: auto;
+  background: #2f67e9;
+  color: white;
+}
+
+.ai {
+  margin-right: auto;
+  border: 1px solid #e2e2e2;
+  background: white;
+}
+
+.agent {
+  margin-right: auto;
+  border: 1px solid #89d3a7;
+  background: #e7fff0;
+}
+
+.bubble strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.message-attachments {
+  margin-top: 10px;
+}
+
+.message-image {
+  display: block;
+  width: min(100%, 320px);
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: white;
+}
+
+.preview-area,
+.preview,
+.speech-status,
+.composer {
+  flex-shrink: 0;
+}
+
+.preview,
+.preview-area {
+  padding: 15px;
+  border-top: 1px solid #eeeeee;
+  background: white;
+}
+
+.preview-card {
+  position: relative;
+  width: fit-content;
+  max-width: 260px;
+}
+
+.preview img,
+.preview-card img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+}
+
+.remove-image {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.remove-image:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.speech-status {
+  padding: 8px 18px;
+  border-top: 1px solid #ececec;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.recording-status {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #ececec;
+  background: white;
+}
+
+.composer input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.composer input:focus {
+  border-color: #2f67e9;
+}
+
+.upload {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.upload.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.composer button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.composer button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.voice-button.recording,
+.composer button.recording {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.send {
+  background: #2f67e9 !important;
+  color: white;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #777777;
+  font-size: 20px;
+}
+
+.typing-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.typing-label {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.typing-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #64748b;
+  animation: typing-dot 1.2s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typing-dot {
+
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+
+}

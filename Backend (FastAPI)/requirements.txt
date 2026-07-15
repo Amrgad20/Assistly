@@ -1,0 +1,79 @@
+# ==========================
+# FastAPI
+# ==========================
+fastapi
+uvicorn[standard]
+
+# ==========================
+# Database
+# ==========================
+sqlalchemy
+psycopg2-binary
+alembic
+
+# ==========================
+# Validation
+# ==========================
+pydantic
+pydantic-settings
+
+# ==========================
+# Environment
+# ==========================
+python-dotenv
+
+# ==========================
+# AI / LLM
+# ==========================
+langchain
+langchain-community
+langchain-google-genai
+
+google-generativeai
+groq
+
+# ==========================
+# Embeddings
+# ==========================
+sentence-transformers
+
+# ==========================
+# Vector Database
+# ==========================
+faiss-cpu
+
+# ==========================
+# PDF
+# ==========================
+pypdf
+
+# ==========================
+# Speech Recognition
+# ==========================
+faster-whisper
+
+# ==========================
+# Computer Vision
+# ==========================
+opencv-python
+Pillow
+
+# ==========================
+# HTTP
+# ==========================
+httpx
+
+# ==========================
+# Utilities
+# ==========================
+numpy
+pandas
+python-multipart
+
+# ==========================
+# Authentication / Tests
+# ==========================
+bcrypt
+PyJWT
+email-validator
+pytest

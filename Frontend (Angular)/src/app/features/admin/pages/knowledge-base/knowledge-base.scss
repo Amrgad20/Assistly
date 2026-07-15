@@ -1,0 +1,163 @@
+.knowledge-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.page-header h1{
+
+    margin:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.page-header p{
+
+    margin-top:6px;
+
+    color:#6b7280;
+
+}
+
+.add-btn{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.add-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.upload-card{
+
+    display:grid;
+
+    grid-template-columns:1fr auto;
+
+    align-items:center;
+
+    gap:10px 24px;
+
+    padding:20px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    background:white;
+
+}
+
+.upload-card h2{
+
+    margin:0;
+
+    font-size:18px;
+
+}
+
+.upload-card p{
+
+    margin:6px 0 0;
+
+    color:#6b7280;
+
+}
+
+.upload-btn{
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    background:#0f766e;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.upload-btn input{
+
+    display:none;
+
+}
+
+.upload-btn.disabled{
+
+    opacity:.65;
+
+    cursor:wait;
+
+}
+
+.upload-state{
+
+    grid-column:1 / -1;
+
+    font-weight:600;
+
+}
+
+.upload-state.success{
+
+    color:#047857;
+
+}
+
+.upload-state.error{
+
+    color:#b91c1c;
+
+}
+
+@media(max-width:700px){
+
+    .upload-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .upload-btn{
+
+        text-align:center;
+
+    }
+
+}

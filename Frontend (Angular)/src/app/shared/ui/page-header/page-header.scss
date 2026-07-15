@@ -1,0 +1,35 @@
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin-bottom:24px;
+
+}
+
+.page-header h1{
+
+    margin:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+.page-header p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+}

@@ -1,0 +1,49 @@
+<div class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-box">
+
+            A
+
+        </div>
+
+        <div>
+
+            <h2>{{ appName }}</h2>
+
+            <span>AI Support Platform</span>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        @for(item of items; track item.route){
+
+        <a
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: item.route === '/support' || item.route === '/admin' || item.route === '/customer' }"
+            (click)="onMenuClick(item)">
+
+            <span class="icon-placeholder">
+
+                ●
+
+            </span>
+
+            <span>
+
+                {{item.title}}
+
+            </span>
+
+        </a>
+
+        }
+
+    </nav>
+
+</div>

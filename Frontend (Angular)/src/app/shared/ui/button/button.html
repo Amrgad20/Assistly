@@ -1,0 +1,37 @@
+<button
+
+    class="assist-btn"
+
+    (click)="onClick()"
+
+    [disabled]="disabled || loading"
+
+    [class.primary]="variant==='primary'"
+
+    [class.secondary]="variant==='secondary'"
+
+    [class.outline]="variant==='outline'"
+
+    [class.danger]="variant==='danger'"
+
+    [class.success]="variant==='success'"
+
+    [class.full-width]="fullWidth">
+
+    @if(loading){
+
+        <span class="loader"></span>
+
+    } @else {
+
+        <ng-content></ng-content>
+
+        @if(text){
+
+            {{text}}
+
+        }
+
+    }
+
+</button>

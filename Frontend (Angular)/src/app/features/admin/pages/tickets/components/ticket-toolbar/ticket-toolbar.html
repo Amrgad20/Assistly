@@ -1,0 +1,19 @@
+<div class="toolbar">
+
+    <input
+        type="text"
+        placeholder="Search tickets..."
+        [ngModel]="search"
+        (ngModelChange)="onSearch($event)">
+
+    @if(mode === 'admin'){
+
+        <app-button
+            text="Add Ticket"
+            variant="primary"
+            (click)="addTicket()">
+        </app-button>
+
+    }
+
+</div>

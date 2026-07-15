@@ -1,0 +1,114 @@
+<div class="table-wrapper">
+
+    @if(loading){
+
+        <div class="loading">
+
+            Loading...
+
+        </div>
+
+    } @else {
+
+        @if(rows.length){
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        @for(column of columns; track column.key){
+
+                            <th>
+
+                                {{ column.label }}
+
+                            </th>
+
+                        }
+
+                        @if(actions.length){
+
+                            <th>
+
+                                Actions
+
+                            </th>
+
+                        }
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @for(row of rows; track row){
+
+                        <tr>
+
+                            @for(column of columns; track column.key){
+
+                                <td>
+
+                                    @if(column.type === 'badge'){
+
+                                        <app-badge
+                                            [text]="getBadgeText(row[column.key])"
+                                            [variant]="getBadgeVariant(row[column.key])">
+                                        </app-badge>
+
+                                    } @else {
+
+                                        {{ row[column.key] }}
+
+                                    }
+
+                                </td>
+
+                            }
+
+                            @if(actions.length){
+
+                                <td>
+
+                                    <div class="actions">
+
+                                        @for(action of actions; track action.action){
+
+                                            <app-button
+                                                [text]="action.label"
+                                                [variant]="action.color ?? 'primary'"
+                                                (click)="onAction(action.action,row)">
+                                            </app-button>
+
+                                        }
+
+                                    </div>
+
+                                </td>
+
+                            }
+
+                        </tr>
+
+                    }
+
+                </tbody>
+
+            </table>
+
+        } @else {
+
+            <div class="empty">
+
+                {{ emptyMessage }}
+
+            </div>
+
+        }
+
+    }
+
+</div>

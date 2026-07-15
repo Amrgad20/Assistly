@@ -1,0 +1,61 @@
+@if(uiState.isAgentModalOpen()){
+
+<div class="overlay">
+
+    <div class="modal">
+
+        <h2>
+
+            {{ uiState.currentAgent() ? 'Edit Support Agent' : 'Add Support Agent' }}
+
+        </h2>
+
+        <app-input
+
+            label="Agent Name"
+
+            placeholder="Ahmed Ali"
+
+            [(ngModel)]="name">
+
+        </app-input>
+
+        <app-input
+
+            label="Email"
+
+            placeholder="agent@assistly.ai"
+
+            [(ngModel)]="email">
+
+        </app-input>
+
+        <div class="buttons">
+
+            <app-button
+
+                text="Cancel"
+
+                variant="secondary"
+
+                (clicked)="close()">
+
+            </app-button>
+
+            <app-button
+
+                [text]="uiState.currentAgent() ? 'Update Agent' : 'Save Agent'"
+
+                variant="primary"
+
+                (clicked)="save()">
+
+            </app-button>
+
+        </div>
+
+    </div>
+
+</div>
+
+}

@@ -1,0 +1,254 @@
+<div class="chat">
+
+  @if (mockData.selectedConversation(); as conversation) {
+
+    <div class="header">
+
+      <div class="customer-info">
+
+        <h3>
+          {{ conversation.customer.name }}
+        </h3>
+
+        <small>
+          {{ conversation.customer.email }}
+        </small>
+
+      </div>
+
+      <span class="status">
+        {{ conversation.status | uppercase }}
+      </span>
+
+    </div>
+
+    <div
+      #messagesContainer
+      class="messages">
+
+      @for (
+        message of conversation.messages;
+        track message.id
+      ) {
+
+        <div
+          class="bubble"
+          [class.customer]="message.sender === 'customer'"
+          [class.ai]="message.sender === 'ai'"
+          [class.agent]="message.sender === 'agent'">
+
+          <strong>
+            {{ message.sender }}
+          </strong>
+
+          @if (message.text) {
+
+            <p>
+              {{ message.text }}
+            </p>
+
+          }
+
+          @if (message.attachments.length) {
+
+            <div class="message-attachments">
+
+              @for (
+                attachment of message.attachments;
+                track attachment.id
+              ) {
+
+                @if (attachment.type === 'image') {
+
+                  <img
+                    class="message-image"
+                    [src]="attachment.url"
+                    [alt]="attachment.name">
+
+                }
+
+              }
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+      @if (sending) {
+
+        <div class="bubble agent sending-bubble">
+
+          <strong>agent</strong>
+
+          <div class="typing-content">
+
+            <span>Sending</span>
+
+            <span class="typing-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+    @if (selectedImage) {
+
+      <div class="preview-area">
+
+        <div class="preview-card">
+
+          <button
+            type="button"
+            class="remove-image"
+            title="Remove image"
+            aria-label="Remove selected image"
+            [disabled]="sending"
+            (click)="removeImage()">
+
+            ✕
+
+          </button>
+
+          <img
+            [src]="selectedImage"
+            alt="Selected image preview">
+
+          <span>
+            Image ready to send
+          </span>
+
+        </div>
+
+      </div>
+
+    }
+
+    @if (speechState === 'recording') {
+
+      <div class="speech-status recording-status">
+
+        Recording... Press stop when finished.
+
+      </div>
+
+    }
+
+    @if (speechState === 'processing') {
+
+      <div class="speech-status">
+
+        Converting speech to text...
+
+      </div>
+
+    }
+
+    <div class="composer">
+
+      <label
+        class="upload"
+        [class.disabled]="
+          sending ||
+          speechState !== 'idle'
+        "
+        title="Attach image">
+
+        +
+
+        <input
+          type="file"
+          hidden
+          accept="image/jpeg,image/png,image/webp,image/bmp"
+          [disabled]="
+            sending ||
+            speechState !== 'idle'
+          "
+          (change)="onImageSelected($event)">
+
+      </label>
+
+      <button
+        type="button"
+        class="voice-button"
+        [class.recording]="
+          speechState === 'recording'
+        "
+        [title]="
+          speechState === 'recording'
+            ? 'Stop recording'
+            : 'Start voice recording'
+        "
+        [disabled]="
+          sending ||
+          speechState === 'processing'
+        "
+        (click)="startVoice()">
+
+        @if (speechState === 'recording') {
+
+          ⏹
+
+        } @else if (speechState === 'processing') {
+
+          ...
+
+        } @else {
+
+          🎤
+
+        }
+
+      </button>
+
+      <input
+        type="text"
+        [(ngModel)]="message"
+        [disabled]="
+          sending ||
+          speechState !== 'idle'
+        "
+        (keyup.enter)="send()"
+        placeholder="Reply to customer...">
+
+      <button
+        type="button"
+        class="send"
+        [disabled]="
+          sending ||
+          speechState !== 'idle' ||
+          (
+            !message.trim() &&
+            !selectedImageFile
+          )
+        "
+        (click)="send()">
+
+        {{ sending ? '...' : '➤' }}
+
+      </button>
+
+    </div>
+
+  } @else {
+
+    <div class="empty">
+
+      Select a conversation
+
+    </div>
+
+  }
+
+</div>

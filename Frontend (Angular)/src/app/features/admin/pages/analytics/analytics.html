@@ -1,0 +1,23 @@
+<div class="page">
+
+    <h1>Analytics</h1>
+
+    <p>Monitor support performance and customer service metrics.</p>
+
+    <div class="cards">
+
+        @for(stat of stats; track stat.label){
+
+            <div class="card">
+
+                <span>{{ stat.label }}</span>
+
+                <h2>{{ stat.value }}</h2>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>

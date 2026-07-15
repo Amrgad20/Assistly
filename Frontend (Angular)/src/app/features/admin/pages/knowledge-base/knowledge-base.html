@@ -1,0 +1,81 @@
+<div class="knowledge-page">
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Knowledge Base</h1>
+
+            <p>
+                Manage the documents used by Assistly AI (RAG).
+            </p>
+
+        </div>
+
+        <button
+            class="add-btn"
+            (click)="page.openForm()">
+
+            + Add Article
+
+        </button>
+
+    </div>
+
+    <section class="upload-card">
+
+        <div>
+
+            <h2>Upload RAG Document</h2>
+
+            <p>PDF or UTF-8 TXT, up to 10 MB. Duplicate files are rejected.</p>
+
+        </div>
+
+        <label
+            class="upload-btn"
+            [class.disabled]="uploadLoading">
+
+            <input
+                type="file"
+                accept=".pdf,.txt,application/pdf,text/plain"
+                [disabled]="uploadLoading"
+                (change)="uploadDocument($event)">
+
+            @if(uploadLoading){
+
+                Uploading and indexing...
+
+            } @else {
+
+                Choose Document
+
+            }
+
+        </label>
+
+        @if(uploadMessage){
+
+            <p class="upload-state success">{{ uploadMessage }}</p>
+
+        }
+
+        @if(uploadError){
+
+            <p class="upload-state error">{{ uploadError }}</p>
+
+        }
+
+    </section>
+
+    <app-kb-toolbar></app-kb-toolbar>
+
+    <app-kb-list></app-kb-list>
+
+    @if(page.isFormOpen()){
+
+        <app-kb-form></app-kb-form>
+
+    }
+
+</div>

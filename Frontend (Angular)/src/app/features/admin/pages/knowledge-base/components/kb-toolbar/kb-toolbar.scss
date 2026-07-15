@@ -1,0 +1,41 @@
+.toolbar{
+
+    display:flex;
+
+    gap:16px;
+
+    align-items:center;
+
+}
+
+.toolbar input{
+
+    flex:1;
+
+    height:46px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    padding:0 16px;
+
+    font-size:15px;
+
+}
+
+.toolbar button{
+
+    width:140px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+}

@@ -1,0 +1,35 @@
+<div class="select-group">
+
+    @if(label){
+
+        <label>
+
+            {{label}}
+
+        </label>
+
+    }
+
+    <select
+
+        [disabled]="disabled"
+
+        [ngModel]="value"
+
+        (ngModelChange)="updateValue($event)">
+
+        @for(option of options; track option.value){
+
+            <option
+
+                [value]="option.value">
+
+                {{option.label}}
+
+            </option>
+
+        }
+
+    </select>
+
+</div>

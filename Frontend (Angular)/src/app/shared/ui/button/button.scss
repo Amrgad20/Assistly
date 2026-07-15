@@ -1,0 +1,139 @@
+.assist-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    min-height:44px;
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.full-width{
+
+    width:100%;
+
+}
+
+.primary{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    background:#1d4ed8;
+
+}
+
+.secondary{
+
+    background:#f1f5f9;
+
+    color:#0f172a;
+
+}
+
+.secondary:hover{
+
+    background:#e2e8f0;
+
+}
+
+.outline{
+
+    background:white;
+
+    border:1px solid #cbd5e1;
+
+    color:#0f172a;
+
+}
+
+.outline:hover{
+
+    background:#f8fafc;
+
+}
+
+.danger{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.danger:hover{
+
+    background:#dc2626;
+
+}
+
+.success{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+.success:hover{
+
+    background:#15803d;
+
+}
+
+.assist-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+.loader{
+
+    width:18px;
+
+    height:18px;
+
+    border:2px solid rgba(255,255,255,.35);
+
+    border-top-color:white;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

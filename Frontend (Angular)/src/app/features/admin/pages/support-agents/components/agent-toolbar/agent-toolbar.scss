@@ -1,0 +1,51 @@
+.toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.left{
+
+    flex:1;
+
+}
+
+.left input{
+
+    width:320px;
+
+    max-width:100%;
+
+    height:44px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    padding:0 14px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+.left input:focus{
+
+    border-color:#2563eb;
+
+}
+
+.right{
+
+    display:flex;
+
+    gap:12px;
+
+}

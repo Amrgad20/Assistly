@@ -1,0 +1,126 @@
+@if(page.isFormOpen()){
+
+  <div
+    class="modal-backdrop"
+    (click)="close()">
+
+    <div
+      class="modal"
+      (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+
+        <h2>
+
+          @if(page.isEditMode){
+
+            Edit Ticket
+
+          } @else {
+
+            Add Ticket
+
+          }
+
+        </h2>
+
+        <button
+          type="button"
+          class="close-btn"
+          aria-label="Close ticket form"
+          (click)="close()">
+
+          ✕
+
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <app-input
+          label="Subject"
+          placeholder="Enter ticket subject"
+          [(ngModel)]="subject">
+        </app-input>
+
+        <app-input
+          label="Customer"
+          placeholder="Enter customer name"
+          [(ngModel)]="customer">
+        </app-input>
+
+        <div class="form-field">
+
+          <label for="description">
+
+            Description
+
+          </label>
+
+          <textarea
+            id="description"
+            rows="4"
+            [(ngModel)]="description"
+            placeholder="Describe the customer issue">
+          </textarea>
+
+        </div>
+
+        <app-select
+          label="Category"
+          [options]="categoryOptions"
+          [(ngModel)]="category">
+        </app-select>
+
+        <app-input
+          label="Order Number (Optional)"
+          placeholder="Example: ORD-54821"
+          [(ngModel)]="orderNumber">
+        </app-input>
+
+        <app-select
+          label="Priority"
+          [options]="priorityOptions"
+          [(ngModel)]="priority">
+        </app-select>
+
+        <app-select
+          label="Status"
+          [options]="statusOptions"
+          [(ngModel)]="status">
+        </app-select>
+
+        <app-select
+          label="Assigned Agent"
+          [options]="agentOptions"
+          [(ngModel)]="assignedAgentId">
+        </app-select>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <app-button
+          text="Cancel"
+          variant="secondary"
+          (click)="close()">
+        </app-button>
+
+        <app-button
+          [text]="
+            page.isEditMode
+              ? 'Update Ticket'
+              : 'Save Ticket'
+          "
+          variant="primary"
+          (click)="save()">
+        </app-button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}

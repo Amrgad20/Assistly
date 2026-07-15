@@ -1,0 +1,13 @@
+.page{display:flex;flex-direction:column;gap:24px}
+
+.page h1{margin:0}
+
+.page p{color:#64748b}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:24px}
+
+.card span{color:#64748b}
+
+.card h2{font-size:34px;margin:12px 0 0}

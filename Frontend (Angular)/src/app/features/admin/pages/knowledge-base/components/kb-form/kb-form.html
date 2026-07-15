@@ -1,0 +1,66 @@
+<div class="form-card">
+
+    <h2>
+
+        @if(page.isEditMode){
+
+            Edit Knowledge Article
+
+        } @else {
+
+            Add Knowledge Article
+
+        }
+
+    </h2>
+
+    <input
+        placeholder="Title"
+        [(ngModel)]="article.title">
+
+    <input
+        placeholder="Category"
+        [(ngModel)]="article.category">
+
+    <input
+        placeholder="Tags (refund,order,payment)"
+        [(ngModel)]="tags">
+
+    <textarea
+
+        rows="8"
+
+        placeholder="Article Content"
+
+        [(ngModel)]="article.content">
+
+    </textarea>
+
+    <div class="actions">
+
+        <button
+            (click)="save()">
+
+            @if(page.isEditMode){
+
+                Update Article
+
+            } @else {
+
+                Save Article
+
+            }
+
+        </button>
+
+        <button
+            class="secondary"
+            (click)="cancel()">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>

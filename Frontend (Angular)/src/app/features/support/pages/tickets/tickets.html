@@ -1,0 +1,23 @@
+<div class="page">
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Assigned Tickets</h1>
+
+            <p>Manage your assigned support tickets.</p>
+
+        </div>
+
+    </div>
+
+    <app-support-ticket-toolbar
+        (searchChange)="search = $event">
+    </app-support-ticket-toolbar>
+
+    <app-support-ticket-list
+        [search]="search">
+    </app-support-ticket-list>
+
+</div>

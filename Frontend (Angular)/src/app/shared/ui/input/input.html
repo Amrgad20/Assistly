@@ -1,0 +1,43 @@
+<div class="input-group">
+
+    @if(label){
+
+        <label>
+
+            {{label}}
+
+            @if(required){
+
+                <span class="required">*</span>
+
+            }
+
+        </label>
+
+    }
+
+    <input
+
+        [type]="type"
+
+        [placeholder]="placeholder"
+
+        [disabled]="disabled"
+
+        [readonly]="readonly"
+
+        [ngModel]="value"
+
+        (ngModelChange)="updateValue($event)">
+
+    @if(error){
+
+        <small>
+
+            {{error}}
+
+        </small>
+
+    }
+
+</div>

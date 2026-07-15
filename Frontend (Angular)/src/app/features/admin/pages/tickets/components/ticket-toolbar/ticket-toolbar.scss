@@ -1,0 +1,37 @@
+.toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.toolbar input{
+
+    width:320px;
+
+    height:46px;
+
+    padding:0 16px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+.toolbar input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
